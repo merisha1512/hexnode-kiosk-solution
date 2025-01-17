@@ -1,0 +1,18 @@
+.features {
+    padding: 30px 20px;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li {
+    margin: 10px 0;
+  }
+  
