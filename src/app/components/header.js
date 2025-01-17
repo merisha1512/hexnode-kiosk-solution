@@ -3,18 +3,12 @@ import React from 'react';
 import './../style/header.css';
 
 const Header = () => {
-  return (
-    <header className="header">
-      <div className="logo">Hexnode Kiosk</div>
-      <nav>
-        <ul className="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-  );
+    return (
+        <header className="header">
+          <div className="logo">hexnode</div>
+          <button className="trial-button">14 DAY FREE TRIAL</button>
+        </header>
+      );
 };
 
 export default Header;

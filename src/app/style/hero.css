@@ -1,27 +1,172 @@
-.hero {
-    padding: 50px 20px;
-    background: #f4f4f4;
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: #121223;
+    color: white;
+    min-height: 70vh; 
   }
   
-  .hero h1 {
+  .hero-text {
+    max-width: 50%;
+  }
+  
+  .hero-text h1 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
   }
   
-  .hero p {
+  .hero-text p {
     font-size: 1.2rem;
-    margin: 20px 0;
+    margin-bottom: 30px;
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .email-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
   }
   
   .cta-button {
-    background: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
+    background: #ff0040;
+    color: white;
     border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
   }
   
   .cta-button:hover {
-    background: #0056b3;
+    background: #cc0033;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 500px;
+  }
+  .recognition-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #121223; /* Dark background */
+    color: #ffffff;           /* White text */
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  
+  .recognition-card {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+  }
+  
+  .recognition-logo {
+    width: 100px; /* Adjust size of logos */
+    margin-bottom: 20px;
+  }
+  
+  .recognition-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 1024px) {
+    .hero-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .hero-text {
+      max-width: 90%;
+    }
+  
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-text p {
+      font-size: 1rem;
+    }
+  
+    .input-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .email-input {
+      width: 100%;
+    }
+  
+    .cta-button {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .hero-image img {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-text p {
+      font-size: 0.9rem;
+    }
+  
+    .email-input {
+      font-size: 0.9rem;
+    }
+  
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+
+    .recognition-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .recognition-card {
+        max-width: 90%;
+        margin-bottom: 20px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero-text p {
+      font-size: 0.8rem;
+    }
+  
+    .input-container {
+      gap: 10px;
+    }
+  
+    .cta-button {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  
+    .hero-image img {
+      max-width: 250px;
+    }
   }
   
