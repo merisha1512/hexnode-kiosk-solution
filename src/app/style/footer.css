@@ -1,10 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.signup-section {
+  background-color: #020a19; /* Dark navy background */
+  color: #ffffff; /* White text */
+  padding: 50px 0;
+}
+
+.signup-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.email-input {
+  width: 200px;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.get-started-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.subtext {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #a6a6a6;
+}
+
+.subtext .request-demo {
+  color: #ff4d4d; /* Light red for demo link */
+  text-decoration: none;
+}
+
+.subtext .request-demo:hover {
+  text-decoration: underline;
+}
+
 .footer {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    text-align: center;
-  }
-  
+  padding: 20px;
+  background-color: #fff; 
+  color: #a6a6a6;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Spread content to edges */
+  align-items: center; /* Vertically center align */
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+.footer-content p {
+  margin: 0; /* Remove default margins */
+}
+
+.footer-content a {
+  color: #a6a6a6;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}

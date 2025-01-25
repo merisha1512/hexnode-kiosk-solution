@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./../style/tab-section.css";
+import PhoneImg from './../../assets/mbl_img.png';
+import MultiAppImg from './../../assets/multi-app-kiosk-image.webp';
+import WebImg from './../../assets/web-based-kiosk-image.webp';
+import DigitalSignImg from './../../assets/digital-signage-kiosk-image.webp';
+import AsamImg from './../../assets/asam-kiosk-image.webp';
 
 const tabsData = [
   {
@@ -12,7 +17,7 @@ const tabsData = [
       "Use advanced kiosk settings for restrictions or expanded functionalities while in kiosk mode.",
       "Empower administrators with full control over the kiosk devices.",
     ],
-    image: "phone-image.png", // Replace with the correct path to the image
+    image: PhoneImg, 
   },
   {
     id: "tab2",
@@ -23,7 +28,7 @@ const tabsData = [
       "Customize which apps are accessible in the mode.",
       "Enhanced admin control and security.",
     ],
-    image: "multi-app.png", // Replace with the correct path to the image
+    image: MultiAppImg, 
   },
   {
     id: "tab3",
@@ -34,7 +39,7 @@ const tabsData = [
       "Restrict access to specific URLs or domains.",
       "Enhanced security for browsing.",
     ],
-    image: "web-kiosk.png", // Replace with the correct path to the image
+    image: WebImg, 
   },
   {
     id: "tab4",
@@ -45,7 +50,7 @@ const tabsData = [
       "Simplify display management with pre-set configurations.",
       "Support for a wide range of content formats.",
     ],
-    image: "digital-signages.png", // Replace with the correct path to the image
+    image: DigitalSignImg, 
   },
   {
     id: "tab5",
@@ -55,7 +60,7 @@ const tabsData = [
       "Advanced security features for ASAM-enabled environments.",
       "Customizable settings for maximum efficiency.",
     ],
-    image: "asam-kiosk.png", // Replace with the correct path to the image
+    image: AsamImg, 
   },
 ];
 
@@ -65,7 +70,7 @@ const TabSection = () => {
   return (
     <div className="App">
       <section className="tabs-section">
-        <h2>Specific kiosk modes for unique use cases</h2>
+        <p className="f-14 p-4">Specific kiosk modes for unique use cases</p>
         <div className="tabs">
           {tabsData.map((tab) => (
             <button
@@ -82,13 +87,39 @@ const TabSection = () => {
             .filter((tab) => tab.id === activeTab)
             .map((tab) => (
               <div key={tab.id}>
-                <h3>{tab.description}</h3>
-                <ul>
-                  {tab.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-                <img src={tab.image} alt={tab.title} />
+                <div className="flex items-start gap-10">
+                  {/* Description and Features */}
+                  <div className="w-full md:w-1/2">
+                    <p className="f-12">{tab.description}</p>
+                    <ul>
+                      {tab.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2 p-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M16.972 6.251a2 2 0 0 0-2.72.777l-3.713 6.682l-2.125-2.125a2 2 0 1 0-2.828 2.828l4 4c.378.379.888.587 1.414.587l.277-.02a2 2 0 0 0 1.471-1.009l5-9a2 2 0 0 0-.776-2.72"
+                            />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                    {/* Image Section */}
+                    <div className="w-full md:w-1/2">
+                    <img
+                      src={tab.image}
+                      alt={tab.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
               </div>
             ))}
         </div>

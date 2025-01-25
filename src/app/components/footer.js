@@ -3,10 +3,15 @@ import React from 'react';
 import './../style/footer.css';
 
 const Footer = () => {
-  return (
-    <footer className="footer">
-      <p>© 2025 Hexnode Kiosk Solution. All rights reserved.</p>
-    </footer>
+  return (    
+      <footer className="footer">
+        <div className="footer-content">
+          <p>
+            <a href="#">Terms of Use</a> - <a href="#">Privacy</a> - <a href="#">Cookies</a>
+          </p>
+          <p>Copyright © 2024 Mitsogo Inc. All Rights Reserved.</p>
+        </div>
+      </footer>
   );
 };
 

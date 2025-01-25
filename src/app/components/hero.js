@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./../style/hero.css";
-import deviceImage from "../../assets/device-img.jpg"; 
+import deviceImage from "../../assets/home-page.png"; 
 import idcLogo from "../../assets/idc-logo-White.png";
 import gartnerLogo from "../../assets/gartner-logo-white-.png";
-import forresterLogo from "../../assets/forrester_logo_white.png"
+import forresterLogo from "../../assets/forrester_logo_white.png";
+import { useNavigate } from "react-router-dom";
+import TabSection from './tab-section';
+import Content from './content';
+import PlatformsSupported from './platform-support';
+import SignUpSection from './signup-section';
+import Footer from './footer';
 
 const HeroSection = () => {
+
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email || !emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+    } else {
+      setError('');
+      navigate("/signup", { state: { email } });
+    }
+  };
+
   return (
     <div>
-    <section className="hero-section">
+   <section className="hero-section">
       <div className="hero-text">
         <h1>Turn your devices into kiosks in a few minutes with Hexnode UEM</h1>
         <div className="input-container">
@@ -16,9 +42,13 @@ const HeroSection = () => {
             type="email"
             placeholder="Your Work Email"
             className="email-input"
+            value={email}
+            onChange={handleEmailChange}
           />
-          <button className="cta-button">GET STARTED NOW!</button>
+          <button className="cta-button" onClick={handleSubmit}>GET STARTED NOW!</button>
         </div>
+        {error && <p className="error-message">{error}</p>} 
+
       </div>
       <div className="hero-image">
         <img src={deviceImage} alt="Devices" />
@@ -44,6 +74,11 @@ const HeroSection = () => {
        </p>
      </div>
    </div>
+   <TabSection />
+      <Content />
+      <PlatformsSupported />
+      <SignUpSection />
+      <Footer />
    </div>
   );
 };
